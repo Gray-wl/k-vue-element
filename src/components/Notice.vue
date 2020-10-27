@@ -8,20 +8,20 @@
 <script>
   export default {
     name: "Notice",
-    props: {
-      title: {
-        type: String,
-        default: "",
-      },
-      message: {
-        type: String,
-        default: "",
-      },
-      duration: {
-        type: Number,
-        default: 1000,
-      },
-    },
+    // props: {
+    //   title: {
+    //     type: String,
+    //     default: "",
+    //   },
+    //   message: {
+    //     type: String,
+    //     default: "",
+    //   },
+    //   duration: {
+    //     type: Number,
+    //     default: 1000,
+    //   },
+    // },
     data() {
       return {
         isShow: false,

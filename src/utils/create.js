@@ -1,5 +1,24 @@
 export const create = (Vue, component, props) => {
-  const _vm = new Vue({
+
+  // extend
+  const Constructor = Vue.extend(component);
+  const _vm = new Constructor({
+    el: document.createElement('div'),
+    data: props,
+    methods: {
+      remove() {
+        document.body.removeChild(_vm.$el);
+        _vm.$destroy();
+      }
+    }
+  });
+
+  document.body.appendChild(_vm.$el);
+
+  return _vm;
+
+  // new Vue
+  /*const _vm = new Vue({
     render: h => {
       return h(component, {props});
     }
@@ -16,5 +35,5 @@ export const create = (Vue, component, props) => {
     _vm.$destroy();
   }
 
-  return comp;
+  return comp;*/
 }
