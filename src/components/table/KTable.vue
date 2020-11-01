@@ -15,7 +15,9 @@ export default {
   props: {
     data: {
       type: Array,
-      default: new Array
+      default: function () {
+        return [];
+      }
     },
     defaultSort: Object,
   },
